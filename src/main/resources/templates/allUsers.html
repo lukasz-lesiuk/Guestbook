@@ -22,6 +22,47 @@
             </tr>
         </tbody>
     </table>
+    <h2>Enter new message</h2>
+
+    <div>
+        <div>
+            <form action="#"
+                  th:action="@{/users}"
+                  th:object="${form}"
+                  method="post">
+                <fieldset>
+					<span>
+						    <input type="submit" th:value="Save">
+						    <input type="reset" th:value="Reset"/>
+					</span>
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th> Id </th>
+                            <th> Name </th>
+                            <th> Message </th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr th:each="user, itemStat : *{users}">
+                            <td><input th:placeholder="Id"
+                                       th:field="*{users[__${itemStat.index}__].id}" required/></td>
+
+                            <td><input th:placeholder="Name"
+                                       th:field="*{users[__${itemStat.index}__].name}" required/></td>
+
+                            <td><input th:placeholder="Message"
+                                       th:field="*{users[__${itemStat.index}__].message}" required/></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+
+
+
 
 </body>
 </html>

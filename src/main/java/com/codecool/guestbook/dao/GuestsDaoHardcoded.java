@@ -11,8 +11,8 @@ import java.util.stream.Stream;
 @Repository
 public class GuestsDaoHardcoded implements GuestsDao {
     private List<User> users = Stream.of(
-            new User(1, "Adam", "ble ble ble", new Date()),
-            new User(2, "Asia", "la lal la", new Date()))
+            new User(1, "Adam", "ble ble ble"),
+            new User(2, "Asia", "la lal la"))
             .collect(Collectors.toList());
 
     @Override
