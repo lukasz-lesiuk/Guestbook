@@ -24,45 +24,38 @@
     </table>
     <h2>Enter new message</h2>
 
-    <div>
-        <div>
-            <form action="#"
-                  th:action="@{/users}"
-                  th:object="${form}"
-                  method="post">
-                <fieldset>
-					<span>
-						    <input type="submit" th:value="Save">
-						    <input type="reset" th:value="Reset"/>
-					</span>
-                    <table class="table">
-                        <thead>
-                        <tr>
-                            <th> Id </th>
-                            <th> Name </th>
-                            <th> Message </th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr th:each="user, itemStat : *{users}">
-                            <td><input th:placeholder="Id"
-                                       th:field="*{users[__${itemStat.index}__].id}" required/></td>
+    <form action="#" th:action="@{/users}" th:object="${user}" method="post">
+<!--        <tr th:each="user : ${users}">-->
+            <p>Id: <input type="text" th:field="*{id}" /></p>
+            <p>Name: <input type="text" th:field="*{name}" /></p>
+            <p>Message: <input type="text" th:field="*{message}" /></p>
+            <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
+<!--        </tr>-->
+    </form>
 
-                            <td><input th:placeholder="Name"
-                                       th:field="*{users[__${itemStat.index}__].name}" required/></td>
+<!--    <form action="#" th:action="@{/users}" th:object="${form}" method="post">-->
+<!--        <p>Id: <input type="text" th:field="*{users[__${itemStat.index}__].id}" /></p>-->
+<!--        <p>Name: <input type="text" th:field="*{name}" /></p>-->
+<!--        <p>Message: <input type="text" th:field="*{message}" /></p>-->
+<!--        <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>-->
+<!--    </form>-->
 
-                            <td><input th:placeholder="Message"
-                                       th:field="*{users[__${itemStat.index}__].message}" required/></td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </fieldset>
-            </form>
-        </div>
-    </div>
-
-
-
+<!--    <form action="#" th:action="@{/users}" th:object="${form}" method="post">-->
+<!--        <fieldset>-->
+<!--            <span>-->
+<!--                <input type="submit" th:value="Save">-->
+<!--                <input type="reset" th:value="Reset"/>-->
+<!--            </span>-->
+<!--            <table>-->
+<!--                <tbody>-->
+<!--                <tr th:each="user, itemStat : *{users}">-->
+<!--                    <td><input th:field="*{users[__${itemStat.index}__].name}" required/></td>-->
+<!--                    <td><input th:field="*{users[__${itemStat.index}__].address}" required/></td>-->
+<!--                </tr>-->
+<!--                </tbody>-->
+<!--            </table>-->
+<!--        </fieldset>-->
+<!--    </form>-->
 
 </body>
 </html>

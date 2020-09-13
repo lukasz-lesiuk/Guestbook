@@ -1,6 +1,7 @@
 package com.codecool.guestbook.model;
 
 import java.util.Date;
+import java.util.Random;
 
 public class User {
     private int id;
@@ -12,6 +13,12 @@ public class User {
         this.id = id;
         this.name = name;
         this.message = message;
+        this.creationDate = new Date();
+    }
+
+    public User(String name, String message) {
+        Random r = new Random();
+        this.id = r.nextInt(1000);
         this.creationDate = new Date();
     }
 
