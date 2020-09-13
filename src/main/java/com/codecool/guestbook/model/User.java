@@ -16,11 +16,11 @@ public class User {
         this.creationDate = new Date();
     }
 
-    public User(String name, String message) {
-        Random r = new Random();
-        this.id = r.nextInt(1000);
-        this.creationDate = new Date();
-    }
+//    public User(String name, String message) {
+//        Random r = new Random();
+//        this.id = r.nextInt(1000);
+//        this.creationDate = new Date();
+//    }
 
     public User() {
         this.creationDate = new Date();
